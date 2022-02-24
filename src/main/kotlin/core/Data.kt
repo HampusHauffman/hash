@@ -1,9 +1,8 @@
 package core
 
 data class Data(
-    val yes: String,
-    val colors: List<String>,
-    val projects: List<Project>
+    val projects: List<Project>,
+    val persons: List<Person>,
 )
 
 data class Project(
@@ -13,6 +12,7 @@ data class Project(
     val amountOfRoles: Int,
     val score: Int,
     val persons: List<Person>,
+    val skills: List<Skill>
 
     )
 

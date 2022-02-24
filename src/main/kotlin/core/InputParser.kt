@@ -16,18 +16,29 @@ PARSE THE FILES
 private fun readInput(fileName: String, problemName: String): ProblemInput {
     val reader = BufferedReader(FileReader("src/main/resources/$fileName"))
 
-    val firstLine = reader.readStrings()
-
+    val firstLine = reader.readInts();
+    val contributors = firstLine[0]
+    val projects = firstLine[1]
 
 
     return ProblemInput(
-        problemName, Data(yes = firstLine.toString(), colors = listOf("adw"))
+        problemName, data = Data(
+            listOf(
+                Project(
+                    daysToComplete = 1, lastDate = 1, startDate = 1, amountOfRoles = 1, score = 1,
+                    persons = listOf(
+                        Person("hampus", listOf(Skill("kotlin", 1)))
+                    ),
+                    skills = listOf(Skill("kotlin", 1))
+                )
+            ),
+            persons = listOf(Person("Hampus", listOf(Skill("kotlin", 1))))
+        )
     )
 }
 
 data class ProblemInput(
-    val problemName: String,
-    val data: Data
+    val problemName: String, val data: Data
 ) {
 
 }
