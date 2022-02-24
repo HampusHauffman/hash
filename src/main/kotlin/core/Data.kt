@@ -7,13 +7,13 @@ data class Data(
 )
 
 data class Project(
+    val name: String,
     val daysToComplete: Int,
     val lastDate: Int,
     val startDate: Int,
     val amountOfRoles: Int,
     val score: Int,
     val persons: List<Person>,
-
     )
 
 data class Skill(
